@@ -1,0 +1,83 @@
+@use '../styles/base';
+
+.main-wrapper {
+    width: 400px;
+    background: base.$wrapper-color;
+    margin: base.$margin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .25);
+    border-radius: 5px;
+
+    h3 {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #3c6382;
+        font-weight: 100;
+        background: #82ccdd;
+        text-transform: uppercase;
+    }
+
+    form {
+        .form-content {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                padding: 5px;  
+
+                label {
+                    font-weight: 200;
+                    margin-bottom: 5px;
+                }
+
+                label::after {
+                    content: '*';
+                    color: red;
+                }
+
+                input[type=text], input[type=password], input[type=email]{
+                    padding: 6px 30px;
+                    border-radius: 5px;
+                    border: none;
+                    width: 260px;
+                }
+
+                input[type=text], input[type=password], input[type=email]:focus {
+                    outline: none;
+                }
+
+                input[type=submit] {
+                    margin-top: 5px;
+                    padding: 7px;
+                    background: base.$button-bg;
+                    border: none;
+                    color: #fff;
+                    border-radius: 5px;
+                    transition: all .3s ease-in;
+                }
+
+                input[type=submit]:hover {
+                    cursor: pointer;
+                    background: base.$btn-bg-hover;
+                    transform: bg;
+                }
+
+                input.ng-invalid.ng-touched {
+                    background-color: #f67f83;
+                    border: 1px solid #BF533B;
+                }
+            }
+
+            small{
+                margin-left: 70px;
+                color: #a10005;
+            }
+        }
+    }
+}
